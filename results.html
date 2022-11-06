@@ -1,7 +1,7 @@
 <?php
 
-include("SitesSearch.php");
-include("ImagesSearch.php");
+include("SitesSearch.html");
+include("ImagesSearch.html");
 
 if(isset($_GET["searchTerm"]))
 {
@@ -24,12 +24,12 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
         <div class="headerSection">
             <div class="headercontent">
                 <div class="image_container">
-                    <a href="index.php">
+                    <a href="index.html">
                         <img src="assets/images/Logo-Poodle2.png" />
                     </a>
                 </div>
                 <div class="textbox_container">
-                    <form action='results.php' method='GET'>
+                    <form action='results.html' method='GET'>
                         <div class="search_box">
                             <input value="<?php echo $type; ?>" type="hidden" name="searchType" />
                             <input value="<?php echo $term; ?>" type="text" class="search_textbox" name="searchTerm" />
@@ -43,10 +43,10 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
             <div class="headerlist">
                 <ul class="tablist">
                     <li class="<?php echo $type == 'sites' ? 'active' : ''?>">
-                        <a href="<?php echo "results.php?searchTerm=$term&searchType=sites"?>">Sites</a>
+                        <a href="<?php echo "results.html?searchTerm=$term&searchType=sites"?>">Sites</a>
                     </li>
                     <li class="<?php echo $type == 'images' ? 'active' : ''?>">
-                        <a href="<?php echo "results.php?searchTerm=$term&searchType=images"?>">Images</a>
+                        <a href="<?php echo "results.html?searchTerm=$term&searchType=images"?>">Images</a>
                     </li>
                 </ul>
             </div>
@@ -86,7 +86,7 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
                     }
                     else{
                     echo "<div class='pageImageContainer'>
-                            <a href='results.php?searchType=$type&searchTerm=$term&page=$currentPage'>
+                            <a href='results.html?searchType=$type&searchTerm=$term&page=$currentPage'>
                                 <img src='assets/images/page_other.png'>
                                 <span class='pageNumber'>$currentPage</span>
                             </a>
